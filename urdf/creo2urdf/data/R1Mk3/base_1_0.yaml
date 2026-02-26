@@ -138,9 +138,11 @@ exportedFrames:
   - frameName: SCSYS_HEAD_ASUS_XTION_RGB
     frameReferenceLink: head_link
     exportedFrameName: depth_rgb
+    additionalTransformation: [0, 0, 0, 0, -1.39626, 1.5708]
   - frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
     frameReferenceLink: head_link
     exportedFrameName: depth
+    additionalTransformation: [0, 0, 0, 0, -1.39626, 1.5708]
   - frameName: SCSYS_HEAD_ASUS_XTION_CENTER
     frameReferenceLink: head_link
     exportedFrameName: depth_center
