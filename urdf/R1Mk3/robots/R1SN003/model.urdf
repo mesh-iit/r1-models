@@ -1632,13 +1632,13 @@
   </joint>
   <link name="depth"/>
   <joint name="depth_fixed_joint" type="fixed">
-    <origin xyz="0.05132675386498539 0.04448710000000006 0.05375475275483321" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <origin xyz="0.05132675386498539 0.04448710000000006 0.05375475275483321" rpy="3.6174008641979e-6 3.4015943103992236e-6 6.378576785263269e-7"/>
     <parent link="head_link"/>
     <child link="depth"/>
   </joint>
   <link name="depth_rgb"/>
   <joint name="depth_rgb_fixed_joint" type="fixed">
-    <origin xyz="0.05132675386498542 0.01848710000000006 0.05375475275483321" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <origin xyz="0.05132675386498542 0.01848710000000006 0.05375475275483321" rpy="3.6174008641979e-6 3.4015943103992236e-6 6.378576785263269e-7"/>
     <parent link="head_link"/>
     <child link="depth_rgb"/>
   </joint>
@@ -2508,7 +2508,7 @@
     <sensor name="realsense_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0444871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <pose>0.0513268 0.0444871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="realsense_depth">
         <pose frame="">0 0 0 0 0 0</pose>
         <horizontal_fov>1.02259</horizontal_fov>
@@ -2534,13 +2534,13 @@
   </gazebo>
   <sensor name="realsense_depth" type="rgbd_camera">
     <parent link="head_link"/>
-    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0444871 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0444871 0.0537548"/>
   </sensor>
   <gazebo reference="head_link">
     <sensor name="realsense_rgb" type="camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0184871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <pose>0.0513268 0.0184871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="realsense_rgb">
         <pose frame="">0 0 0 0 0 0</pose>
         <horizontal_fov>1.02259</horizontal_fov>
@@ -2566,7 +2566,7 @@
   </gazebo>
   <sensor name="realsense_rgb" type="camera">
     <parent link="head_link"/>
-    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0184871 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0184871 0.0537548"/>
   </sensor>
   <gazebo reference="r_arm_ft_sensor">
     <preserveFixedJoint>true</preserveFixedJoint>
