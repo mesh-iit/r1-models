@@ -2508,10 +2508,10 @@
     <sensor name="stereo_left_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 -0.025 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <pose>0.0513268 0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="stereo_left_depth">
         <pose frame="">0 0 0 0 0 0</pose>
-        <horizontal_fov>1.02259</horizontal_fov>
+        <horizontal_fov>1.57</horizontal_fov>
         <distortion>
           <k1>0</k1>
           <k2>0</k2>
@@ -2521,8 +2521,8 @@
           <center>319.5 239.5</center>
         </distortion>
         <image>
-          <width>640</width>
-          <height>480</height>
+          <width>1280</width>
+          <height>960</height>
           <format>R8G8B8</format>
         </image>
         <clip>
@@ -2534,16 +2534,16 @@
   </gazebo>
   <sensor name="stereo_left_depth" type="rgbd_camera">
     <parent link="head_link"/>
-    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 -0.025 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0465 0.0537548"/>
   </sensor>
   <gazebo reference="head_link">
     <sensor name="stereo_right_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.025 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <pose>0.0513268 -0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="stereo_right_depth">
         <pose frame="">0 0 0 0 0 0</pose>
-        <horizontal_fov>1.02259</horizontal_fov>
+        <horizontal_fov>1.57</horizontal_fov>
         <distortion>
           <k1>0</k1>
           <k2>0</k2>
@@ -2553,8 +2553,8 @@
           <center>319.5 239.5</center>
         </distortion>
         <image>
-          <width>640</width>
-          <height>480</height>
+          <width>1280</width>
+          <height>960</height>
           <format>R8G8B8</format>
         </image>
         <clip>
@@ -2566,7 +2566,7 @@
   </gazebo>
   <sensor name="stereo_right_depth" type="rgbd_camera">
     <parent link="head_link"/>
-    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.025 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 -0.0465 0.0537548"/>
   </sensor>
   <gazebo reference="r_arm_ft_sensor">
     <preserveFixedJoint>true</preserveFixedJoint>
@@ -2591,7 +2591,7 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+      <initialConfiguration>-0.86 0.52 0 0.785 0 0 0.0</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2628,7 +2628,7 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+      <initialConfiguration>-0.86 0.52 0 0.785 0 0 0.0</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2679,7 +2679,7 @@
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::StereoDepthCamera" filename="gz-sim-yarp-stereodepthcamera-system">
-      <yarpConfigurationString>(leftYarpDeviceName depthcamera_plugin_left_device) (rightYarpDeviceName depthcamera_plugin_right_device) (parentLinkName head_link) (leftSensorName stereo_left_depth) (rightSensorName stereo_right_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+      <yarpConfigurationString>(leftYarpDeviceName depthcamera_plugin_left_device) (rightYarpDeviceName depthcamera_plugin_right_device) (parentLinkName head_link) (leftSensorName stereo_left_depth) (rightSensorName stereo_right_depth) (stereoRgbPortName /r1mk3Sim/depthCamera/stereo/rgbImage:o) (display_timestamp) (display_time_box)</yarpConfigurationString>
     </plugin>
   </gazebo>
   <gazebo>
