@@ -2521,8 +2521,8 @@
           <center>319.5 239.5</center>
         </distortion>
         <image>
-          <width>1280</width>
-          <height>960</height>
+          <width>640</width>
+          <height>480</height>
           <format>R8G8B8</format>
         </image>
         <clip>
@@ -2553,8 +2553,8 @@
           <center>319.5 239.5</center>
         </distortion>
         <image>
-          <width>1280</width>
-          <height>960</height>
+          <width>640</width>
+          <height>480</height>
           <format>R8G8B8</format>
         </image>
         <clip>
