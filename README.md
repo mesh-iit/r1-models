@@ -2,6 +2,12 @@
 
 This repository hosts the configuration files for generating R1Mk3 urdf.
 
+## Contributing
+
+Do you want to contribute to this repository? We welcome pull requests!
+
+ℹ️ See the [`CONTRIBUTING.md`](./CONTRIBUTING.md) file for detailed guidelines to ensure the highest quality and maintainability of the URDF.
+
 ## Installation
 
 ### Dependencies
