@@ -414,6 +414,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_index_add" type="revolute">
     <origin xyz="0.02249999999999991 0.0015000000000005564 -0.06859999999999972" rpy="-1.8219785097875794e-15 0.2967059728390403 3.141592653589792"/>
@@ -438,6 +447,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
     <origin xyz="0.009600000000000018 0.0015000000000005564 -0.1029999999999997" rpy="-1.5201721959961367e-15 1.796577209917105e-15 3.1415926535897922"/>
@@ -462,6 +480,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
     <origin xyz="-0.03598268094316612 0.0023777595791096284 -0.09206828131946365" rpy="4.1095343994377795e-4 -0.0872664625997284 3.115412714809877"/>
@@ -486,6 +513,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
     <origin xyz="-0.015417755558119937 0.001849813728471178 -0.09788067183884414" rpy="-1.8555868085958955e-15 -0.08726646259972873 3.115412714809877"/>
@@ -510,6 +546,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
     <origin xyz="0.0233748632563905 0.0030000000000003912 -0.03452383847355461" rpy="1.673677624598278e-15 -0.22689280275926468 -4.805912162985855e-17"/>
@@ -534,6 +579,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
     <origin xyz="0.03807465449956053 0.0034691095803252026 -0.0036017448035498" rpy="1.4305744121375041 0.1970305979589347 -1.4222071875351316"/>
@@ -558,6 +612,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
     <origin xyz="-5.551115123125783e-17 -0.003710625528295264 -0.03483505788984388" rpy="-0.0632887739526204 3.164135620181696e-15 1.4696577288475478e-14"/>
@@ -582,6 +645,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
     <origin xyz="4.163336342344337e-17 -0.0015000000000001956 -0.039999999999999425" rpy="-1.387778780781446e-17 -4.163336342344337e-17 -7.632783294297954e-17"/>
@@ -606,6 +678,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
     <origin xyz="2.7755575615628914e-17 -0.001514193309378964 -0.03499938883211856" rpy="-0.0012956915198226522 -1.1102230246251565e-16 -2.498001805406603e-16"/>
@@ -630,6 +711,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
     <origin xyz="6.938893903907228e-18 -0.0014999999999997238 -0.04000000000000015" rpy="-7.535550938194039e-8 1.5894403848637495e-16 -2.1003028960117637e-17"/>
@@ -654,6 +744,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
     <origin xyz="-0.009192533317427781 2.7755575615628914e-17 -0.030713451316238427" rpy="-6.519807412594219e-16 2.220446049250313e-16 5.507069409868563e-17"/>
@@ -678,6 +777,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
     <origin xyz="9.71445146547012e-17 -0.0014999999999999458 -0.04000000000000048" rpy="1.0015571678219023e-16 1.1102230246251565e-16 -3.169258475446692e-16"/>
@@ -702,6 +810,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
     <origin xyz="0.0024999999999943956 0.09330000000000116 -0.0043301270189194385" rpy="-0.24434609527918347 1.047197551196627 1.5797638804743949e-15"/>
@@ -867,6 +984,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_index_add" type="revolute">
     <origin xyz="0.02249999999999995 -0.001500000000000501 -0.06859999999999994" rpy="-1.252207604908352e-15 -0.2967059728390365 1.0514741729292331e-16"/>
@@ -891,6 +1017,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
     <origin xyz="0.009600000000000067 -0.0015000000000003344 -0.10300000000000004" rpy="5.479728916542452e-4 2.185751579730777e-15 -9.227288936186277e-16"/>
@@ -915,6 +1050,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
     <origin xyz="-0.0359823222495273 -0.0023883158589562137 -0.09206560929209884" rpy="-1.9934588677535882e-5 0.08728175651239214 0.026187612448127378"/>
@@ -939,6 +1083,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
     <origin xyz="-0.015417755558119903 -0.0018498137284706784 -0.09788067183884441" rpy="-4.001819088243124e-5 0.08726646259973235 0.026179938779914515"/>
@@ -963,6 +1116,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
     <origin xyz="0.023374863256390335 -0.0029999999999996696 -0.034523838473555835" rpy="-0.040449700618591246 0.22331918636553127 2.960843541269833"/>
@@ -987,6 +1149,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
     <origin xyz="-0.03809319745034652 -0.0032591938585445623 -0.0036017448037202193" rpy="1.430574412172528 -0.1970305979994932 1.5984202269739927"/>
@@ -1011,6 +1182,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
     <origin xyz="5.551115123125783e-17 -0.0037106254246526693 -0.034835057900884356" rpy="-0.0632887709773814 1.1102230246251565e-16 2.6684383869213243e-15"/>
@@ -1035,6 +1215,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
     <origin xyz="-2.7755575615628914e-17 -0.0014999999999998626 -0.04000000000000009" rpy="-1.204430863606553e-4 -5.551115123125783e-17 -6.591949208711866e-17"/>
@@ -1059,6 +1248,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
     <origin xyz="0 -0.0014999999959518229 -0.03500000000409309" rpy="-4.4386812336867395e-5 3.608224830031759e-16 -3.400058012914541e-16"/>
@@ -1083,6 +1281,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
     <origin xyz="1.1102230246251565e-16 -0.0014999999999998626 -0.040000000000000036" rpy="0.017535706363213603 -2.3592239273284576e-16 -8.049862317525965e-17"/>
@@ -1107,6 +1314,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
     <origin xyz="0.009192533317427934 2.7755575615628914e-17 -0.03071345131623815" rpy="2.663478161982204e-16 8.326672684688674e-17 -1.3437669488421125e-16"/>
@@ -1131,6 +1347,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
     <origin xyz="1.1102230246251565e-16 -0.0015000000000004732 -0.03999999999999959" rpy="-7.482326192699012e-8 -0 -2.1792633073548092e-16"/>
@@ -1155,6 +1380,15 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
   </link>
   <joint name="neck_yaw_joint" type="revolute">
     <origin xyz="0.011679488023179689 -9.677503327256982e-18 0.1583779958185998" rpy="-1.2299256863622814e-15 0.17453292519943311 -7.040232933848852e-15"/>
@@ -2091,11 +2325,11 @@
     <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
   </sensor>
   <gazebo reference="head_link">
-    <sensor name="realsense_depth" type="rgbd_camera">
+    <sensor name="stereo_left_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0444871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
-      <camera name="realsense_depth">
+      <pose>0.0513268 0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <camera name="stereo_left_depth">
         <pose frame="">0 0 0 0 0 0</pose>
         <horizontal_fov>1.02259</horizontal_fov>
         <distortion>
@@ -2118,16 +2352,16 @@
       </camera>
     </sensor>
   </gazebo>
-  <sensor name="realsense_depth" type="rgbd_camera">
+  <sensor name="stereo_left_depth" type="rgbd_camera">
     <parent link="head_link"/>
-    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0444871 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0465 0.0537548"/>
   </sensor>
   <gazebo reference="head_link">
-    <sensor name="realsense_rgb" type="camera">
+    <sensor name="stereo_right_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0184871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
-      <camera name="realsense_rgb">
+      <pose>0.0513268 -0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <camera name="stereo_right_depth">
         <pose frame="">0 0 0 0 0 0</pose>
         <horizontal_fov>1.02259</horizontal_fov>
         <distortion>
@@ -2150,9 +2384,9 @@
       </camera>
     </sensor>
   </gazebo>
-  <sensor name="realsense_rgb" type="camera">
+  <sensor name="stereo_right_depth" type="rgbd_camera">
     <parent link="head_link"/>
-    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0184871 0.0537548"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 -0.0465 0.0537548"/>
   </sensor>
   <gazebo reference="r_arm_ft_sensor">
     <preserveFixedJoint>true</preserveFixedJoint>
@@ -2177,7 +2411,7 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+      <initialConfiguration>-0.86 0.52 0 0.785 0 0 0.0</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2214,7 +2448,7 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+      <initialConfiguration>-0.86 0.52 0 0.785 0 0 0.0</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2264,8 +2498,8 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-      <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    <plugin name="gzyarp::StereoDepthCamera" filename="gz-sim-yarp-stereodepthcamera-system">
+      <yarpConfigurationString>(leftYarpDeviceName depthcamera_plugin_left_device) (rightYarpDeviceName depthcamera_plugin_right_device) (parentLinkName head_link) (leftSensorName stereo_left_depth) (rightSensorName stereo_right_depth) (stereoRgbPortName /r1mk3Sim/depthCamera/stereo/rgbImage:o) (display_timestamp) (display_time_box)</yarpConfigurationString>
     </plugin>
   </gazebo>
   <gazebo>
