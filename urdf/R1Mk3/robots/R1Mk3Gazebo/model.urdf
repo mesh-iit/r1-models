@@ -2511,7 +2511,7 @@
       <pose>0.0513268 0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="stereo_left_depth">
         <pose frame="">0 0 0 0 0 0</pose>
-        <horizontal_fov>1.57</horizontal_fov>
+        <horizontal_fov>1.02259</horizontal_fov>
         <distortion>
           <k1>0</k1>
           <k2>0</k2>
@@ -2543,7 +2543,7 @@
       <pose>0.0513268 -0.0465 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
       <camera name="stereo_right_depth">
         <pose frame="">0 0 0 0 0 0</pose>
-        <horizontal_fov>1.57</horizontal_fov>
+        <horizontal_fov>1.02259</horizontal_fov>
         <distortion>
           <k1>0</k1>
           <k2>0</k2>
