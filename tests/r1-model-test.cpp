@@ -262,7 +262,7 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotR1Mk3Mod
     axisNames.push_back("neck_pitch_joint");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0,1,0));
     axisNames.push_back("neck_yaw_joint");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.173648,1.18476e-14,-0.984808));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.173648,-1.18476e-14,0.984808));
     axisNames.push_back("r_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-1,1.38653e-05,0.000414302));
     axisNames.push_back("r_shoulder_yaw");
