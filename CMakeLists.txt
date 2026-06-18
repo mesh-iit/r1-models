@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
 project(r1-models
-        VERSION 1.0.1
+        VERSION 1.0.2
         LANGUAGES NONE)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
