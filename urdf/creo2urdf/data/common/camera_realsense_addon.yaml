@@ -1,0 +1,68 @@
+sensors:
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
+    sensorName: "realsense_depth"
+    exportFrameInURDF: No
+    sensorType: "rgbd_camera"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_depth'>
+                    <pose frame=''>0 0 0 0 0 0</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_RGB
+    sensorName: "realsense_rgb"
+    exportFrameInURDF: No
+    sensorType: "camera"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_rgb'>
+                    <pose frame=''>0 0 0 0 0 0</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+
+XMLBlobs:
+    - |
+            <gazebo>
+              <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+                <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+              </plugin>
+            </gazebo>
