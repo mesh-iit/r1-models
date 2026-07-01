@@ -747,13 +747,13 @@ sensors:
 
   - linkName: head_link
     frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
-    sensorName: "realsense_depth"
+    sensorName: "stereo_left_depth"
     exportFrameInURDF: No
     sensorType: "rgbd_camera"
     updateRate: 30
     sensorBlobs:
     - |
-                <camera name='realsense_depth'>
+                <camera name='stereo_left_depth'>
                     <pose frame=''>0 0 0 0 0 0</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
@@ -777,13 +777,13 @@ sensors:
 
   - linkName: head_link
     frameName: SCSYS_HEAD_ASUS_XTION_RGB
-    sensorName: "realsense_rgb"
+    sensorName: "stereo_right_depth"
     exportFrameInURDF: No
-    sensorType: "camera"
+    sensorType: "rgbd_camera"
     updateRate: 30
     sensorBlobs:
     - |
-                <camera name='realsense_rgb'>
+                <camera name='stereo_right_depth'>
                     <pose frame=''>0 0 0 0 0 0</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
@@ -999,6 +999,12 @@ XMLBlobs:
             <gazebo>
               <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
                 <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+              </plugin>
+            </gazebo>
+
+            <gazebo>
+              <plugin name="gzyarp::StereoDepthCamera" filename="gz-sim-yarp-stereodepthcamera-system">
+                <yarpConfigurationString>(leftYarpDeviceName depthcamera_plugin_left_device) (rightYarpDeviceName depthcamera_plugin_right_device) (parentLinkName head_link) (leftSensorName stereo_left_depth) (rightSensorName stereo_right_depth) (stereoRgbPortName /r1mk3Sim/depthCamera/stereo/rgbImage:o) (display_timestamp) (display_time_box)</yarpConfigurationString>
               </plugin>
             </gazebo>
     - |
