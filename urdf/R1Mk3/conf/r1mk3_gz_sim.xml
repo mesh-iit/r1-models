@@ -39,11 +39,15 @@
     <xi:include href="wrappers/sensors/lidar_double_nws_yarp.xml"  disabled_by="disable_lidar"/>
     <xi:include href="wrappers/sensors/lidar_double_nws_ros2.xml"  enabled_by="enable_ros2" disabled_by="disable_lidar"/>
 
-   <!-- CAMERAS -->
-   <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp_left.xml" />
+    <!-- RGBD CAMERA -->
+    <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp.xml" />
+    <xi:include href="wrappers/sensors/rgbd_camera_nws_ros2.xml" />
+
+   <!-- STEREO CAMERA -->
+   <!-- <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp_left.xml" />
    <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp_right.xml" />
    <xi:include href="wrappers/sensors/rgbd_camera_nws_ros2_left.xml" />
-   <xi:include href="wrappers/sensors/rgbd_camera_nws_ros2_right.xml" />
+   <xi:include href="wrappers/sensors/rgbd_camera_nws_ros2_right.xml" /> -->
 
  
     </devices>

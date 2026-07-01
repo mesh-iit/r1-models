@@ -1,1 +1,1 @@
-includes: [base_1_0.yaml, ..\common\gazebo_addon.yaml, ..\common\camera_realsense_addon.yaml]
+includes: [..\common\camera_realsense_addon.yaml, base_1_0.yaml, ..\common\gazebo_addon.yaml]

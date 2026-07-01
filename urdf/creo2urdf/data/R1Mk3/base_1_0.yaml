@@ -938,12 +938,6 @@ XMLBlobs:
             </gazebo>
     - |
             <gazebo>
-              <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-                <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
-              </plugin>
-            </gazebo>
-    - |
-            <gazebo>
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
                 <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>

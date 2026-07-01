@@ -1,1 +1,1 @@
-includes: [base_1_0.yaml, ..\common\gazebo_addon.yaml, ..\common\stereo_addon.yaml]
+includes: [..\common\stereo_addon.yaml, base_1_0.yaml, ..\common\gazebo_addon.yaml]
