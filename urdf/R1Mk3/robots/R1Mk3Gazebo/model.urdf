@@ -2442,68 +2442,6 @@
     </force_torque>
     <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
   </sensor>
-  <gazebo reference="mobile_base_body_link">
-    <sensor name="base_laser_front" type="gpu_lidar">
-      <always_on>1</always_on>
-      <update_rate>40.000000</update_rate>
-      <pose>0.07 0 0.031 0 -0 0 </pose>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1600</samples>
-            <resolution>1</resolution>
-            <min_angle>0</min_angle>
-            <max_angle>6.28</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>20.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.005</stddev>
-        </noise>
-      </ray>
-    </sensor>
-  </gazebo>
-  <sensor name="base_laser_front" type="gpu_lidar">
-    <parent link="mobile_base_body_link"/>
-    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
-  </sensor>
-  <gazebo reference="mobile_base_body_link">
-    <sensor name="base_laser_back" type="gpu_lidar">
-      <always_on>1</always_on>
-      <update_rate>40.000000</update_rate>
-      <pose>-0.085 0 0.031 0 -0 3.14159 </pose>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1600</samples>
-            <resolution>1</resolution>
-            <min_angle>0</min_angle>
-            <max_angle>6.28</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>20.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.005</stddev>
-        </noise>
-      </ray>
-    </sensor>
-  </gazebo>
-  <sensor name="base_laser_back" type="gpu_lidar">
-    <parent link="mobile_base_body_link"/>
-    <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
-  </sensor>
   <gazebo reference="head_link">
     <sensor name="realsense_depth" type="rgbd_camera">
       <always_on>1</always_on>
@@ -2568,6 +2506,73 @@
     <parent link="head_link"/>
     <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0184871 0.0537548"/>
   </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser_front" type="gpu_lidar">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>0.07 0 0.031 0 -0 0 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1600</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.28</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser_front" type="gpu_lidar">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser_back" type="gpu_lidar">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>-0.085 0 0.031 0 -0 3.14159 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1600</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.28</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser_back" type="gpu_lidar">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
+  </sensor>
+  <gazebo>
+    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+      <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    </plugin>
+  </gazebo>
   <gazebo reference="r_arm_ft_sensor">
     <preserveFixedJoint>true</preserveFixedJoint>
     <!-- For compatibility with SDFormat < 4.4 -->
@@ -2675,11 +2680,6 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-      <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
     </plugin>
   </gazebo>
   <gazebo>
