@@ -1,1 +1,2809 @@
-c
+<?xml version="1.0"?>
+<robot name="R1Mk3">
+  <link name="mobile_base_body_link">
+    <inertial>
+      <mass value="22.38733831972927"/>
+      <origin xyz="0.004531530382432036 0 0.06342751366445423" rpy="0 -0 0"/>
+      <inertia ixx="0.555440058441419" ixy="0" ixz="-0.0640008025738856" iyy="0.5868785916369081" iyz="0" izz="0.2693721028680779"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mob_base_body.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.12" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0.32 0.32 0.08"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mobile_base_l_wheel_joint" type="revolute">
+    <origin xyz="0 0.1389999999999999 -1.1102230246251565e-16" rpy="0 7.662700497994973e-16 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_l_tyre_link"/>
+    <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="0.5" friction="0"/>
+  </joint>
+  <link name="mobile_base_l_tyre_link">
+    <inertial>
+      <mass value="3.2199858055744675"/>
+      <origin xyz="0 0.03442489884626515 9.10811343815543e-6" rpy="0 -0 0"/>
+      <inertia ixx="0.021487596568520503" ixy="0" ixz="0" iyy="0.04037529515619701" iyz="-8.891903600015211e-7" izz="0.021483307656942376"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mobile_base_l_tyre.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.03 0" rpy="1.57079632679 -0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mobile_base_r_wheel_joint" type="revolute">
+    <origin xyz="0 -0.13900000000000004 -2.7755575615628914e-17" rpy="0 -0 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_r_tyre_link"/>
+    <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="0.5" friction="0"/>
+  </joint>
+  <link name="mobile_base_r_tyre_link">
+    <inertial>
+      <mass value="3.2199844996907157"/>
+      <origin xyz="0 -0.03442488632484336 9.102946312872229e-6" rpy="0 -0 0"/>
+      <inertia ixx="0.021487589328670016" ixy="0" ixz="0" iyy="0.040375282920497746" iyz="8.888241223903605e-7" izz="0.021483299995861717"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mobile_base_r_tyre.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.03 0" rpy="1.57079632679 -0 0"/>
+      <geometry>
+        <cylinder radius="0.16" length="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="torso_heave_eq_joint" type="prismatic">
+    <origin xyz="0.04399999999999975 0 0.06999999999999978" rpy="0 -0 1.1561757607518842e-15"/>
+    <axis xyz="0 0 1"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="torso_slider_eq_link"/>
+    <limit lower="0" upper="0.17" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="torso_slider_eq_link">
+    <inertial>
+      <mass value="5.59982626694707"/>
+      <origin xyz="0.015174971832668069 2.80975224798882e-6 0.24553275341839229" rpy="0 -0 0"/>
+      <inertia ixx="0.07308089006270702" ixy="-1.3698388363514908e-6" ixz="0.0046719400245096195" iyy="0.07238788684975928" iyz="-5.401529104640673e-18" izz="0.055708127154132946"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_slider_eq.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_slider_eq.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="torso_roll_eq_joint" type="revolute">
+    <origin xyz="2.0816681711721685e-17 -5.242619982186716e-24 0.40000000000000024" rpy="0 2.220446049250313e-16 -1.8377532023260753e-23"/>
+    <axis xyz="1 1.9721522630525295e-31 2.220446049250313e-16"/>
+    <parent link="torso_slider_eq_link"/>
+    <child link="torso_pin_eq_link"/>
+    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="torso_pin_eq_link">
+    <inertial>
+      <mass value="0.31999477371302226"/>
+      <origin xyz="0 0 6.1232339957367664e-24" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_pin_eq.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_pin_eq.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="torso_pitch_eq_joint" type="revolute">
+    <origin xyz="-1.3183898417423734e-16 -5.769801341748891e-19 -8.881784197001252e-16" rpy="2.677430187438326e-32 1.110223024625156e-16 -1.2767564783189298e-15"/>
+    <axis xyz="1.2767564783189298e-15 -1 3.8508387890912664e-31"/>
+    <parent link="torso_pin_eq_link"/>
+    <child link="torso_platform_link"/>
+    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="torso_platform_link">
+    <inertial>
+      <mass value="0.031999825298309546"/>
+      <origin xyz="-2.0816681711721685e-17 -1.2609946697555567e-16 0" rpy="0 -0 0"/>
+      <inertia ixx="3.266648832535854e-5" ixy="0" ixz="0" iyy="3.266648832535849e-5" iyz="0" izz="6.47996462290769e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_platform.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_platform.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="torso_yaw_joint" type="revolute">
+    <origin xyz="2.220446049250313e-16 -1.6880686544087094e-16 0.06950000000000012" rpy="-1.0898835157993226e-15 1.4574786319396409e-16 2.150984683485474e-15"/>
+    <axis xyz="-1.4574786319396409e-16 -1.0898835157993226e-15 1"/>
+    <parent link="torso_platform_link"/>
+    <child link="chest_link"/>
+    <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="chest_link">
+    <inertial>
+      <mass value="11.006630670053784"/>
+      <origin xyz="-0.05342508362944062 4.451185528156479e-4 0.16350186281802392" rpy="0 -0 0"/>
+      <inertia ixx="0.22592706246813526" ixy="-1.373015943959773e-4" ixz="0.027792693776069563" iyy="0.21551813958910926" iyz="-0.00695979090154285" izz="0.10409836015106214"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_chest.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_chest.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="neck_pitch_joint" type="revolute">
+    <origin xyz="-0.0939999999999997 -1.5911115898279495e-16 0.3304999999999986" rpy="1.4266365866433113e-14 1.1313955190051007e-15 4.4868448346273745e-15"/>
+    <axis xyz="1.1561757607518887e-15 1 -5.551115123110952e-17"/>
+    <parent link="chest_link"/>
+    <child link="neck_link"/>
+    <limit lower="-0.5235987755982988" upper="0.8726646259971648" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="neck_link">
+    <inertial>
+      <mass value="1.4"/>
+      <origin xyz="-3.216550439930285e-4 -1.7030856145810995e-17 0.07755531114599701" rpy="0 -0 0"/>
+      <inertia ixx="0.0042979349262165165" ixy="1.6175679588350532e-19" ixz="-5.92816958988333e-4" iyy="0.004437841678610556" iyz="6.854005985449545e-19" izz="4.199038582793866e-4"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_neck.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_neck.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_shoulder_pitch" type="revolute">
+    <origin xyz="-0.08400053150683917 0.12013484795757048 0.286332955917873" rpy="0.46227268619152106 -0.9974565180194648 -0.3965303028718867"/>
+    <axis xyz="-1.149080830487037e-14 1.0000000000000024 1.0005885009434223e-14"/>
+    <parent link="chest_link"/>
+    <child link="l_shoulder_1"/>
+    <limit lower="-2.9670597283903604" upper="0.6108652381980153" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_shoulder_1">
+    <inertial>
+      <mass value="0.9205302270338587"/>
+      <origin xyz="-0.001946411732135389 0.06685258321997073 -0.001525090959314912" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_shoulder_pitch" type="revolute">
+    <origin xyz="-0.08400053150683896 -0.12013484795757053 0.2863329559178688" rpy="-0.4622726861915203 -0.9974565180194644 0.39653030287188284"/>
+    <axis xyz="8.770761894538737e-15 1.0000000000000013 -7.0637939941775585e-15"/>
+    <parent link="chest_link"/>
+    <child link="r_shoulder_1"/>
+    <limit lower="-2.9670597283903604" upper="0.6108652381980153" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_shoulder_1">
+    <inertial>
+      <mass value="0.9205302270338587"/>
+      <origin xyz="-0.0019414141305987842 -0.06685331018889412 -0.00153764721332289" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.010000000000000002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_shoulder_roll" type="revolute">
+    <origin xyz="0.003749999999999143 -0.09330000000000055 -0.006495190528383377" rpy="0.244346095279198 1.0471975511965996 2.4338251683117622e-14"/>
+    <axis xyz="-1 -1.429412144204889e-14 1.021405182655144e-14"/>
+    <parent link="r_shoulder_1"/>
+    <child link="r_shoulder_2"/>
+    <limit lower="-0.2617993877991494" upper="2.6179938779914944" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_shoulder_2">
+    <inertial>
+      <mass value="0.6080396220710449"/>
+      <origin xyz="-7.465746078458985e-5 -0.006873436249446779 -0.04428821648354275" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_arm_ft_sensor" type="fixed">
+    <origin xyz="-0.0068499999999994746 -0.015000000000000097 -0.08430000000000015" rpy="-1.1679620594505114e-16 6.826136877968736e-15 4.94835800753015e-15"/>
+    <parent link="r_shoulder_2"/>
+    <child link="r_shoulder_3"/>
+  </joint>
+  <link name="r_shoulder_3">
+    <inertial>
+      <mass value="0.4623249532467936"/>
+      <origin xyz="1.1402388285693815e-4 0.0021062597854318577 -0.05634188166833354" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_shoulder_yaw" type="revolute">
+    <origin xyz="1.3787582187063663e-14 0 -0.09249999999999958" rpy="1.0867658778094487e-13 -3.511889672298818e-13 -8.388657031109435e-14"/>
+    <axis xyz="-1.0756098702675875e-14 -7.324493453917992e-15 1.0000000000000002"/>
+    <parent link="r_shoulder_3"/>
+    <child link="r_upper_arm"/>
+    <limit lower="-0.9075712110370514" upper="1.4311699866353502" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_upper_arm">
+    <inertial>
+      <mass value="5.151351881512406"/>
+      <origin xyz="-0.0016337943691091053 -2.849044717098126e-4 -0.0291327391827797" rpy="0 -0 0"/>
+      <inertia ixx="0.016840874694995834" ixy="-4.251606397628043e-6" ixz="-2.0760347528950605e-4" iyy="0.016820111448241134" iyz="5.131532859128798e-4" izz="0.007390922215738868"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_upperarm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_upperarm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_elbow" type="revolute">
+    <origin xyz="0.010000000000000168 0.0014999999999925628 -0.12369999999999992" rpy="-8.776602962605454e-15 8.621163678779187e-14 -4.61332598370497e-15"/>
+    <axis xyz="-6.881155398478144e-15 -1.0000000000000007 -1.766090636148874e-13"/>
+    <parent link="r_upper_arm"/>
+    <child link="r_forearm"/>
+    <limit lower="-0.08726646259971647" upper="2.0943951023931953" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_forearm">
+    <inertial>
+      <mass value="1.5127280243277526"/>
+      <origin xyz="-0.017870144976380828 -4.3369235091492153e-4 -0.1201340745623698" rpy="0 -0 0"/>
+      <inertia ixx="0.010000000000000002" ixy="0" ixz="0" iyy="0.009999999999999998" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_forearm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_forearm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_wrist_yaw" type="revolute">
+    <origin xyz="-0.014999999999887593 -0.002000000000031976 -0.24435000000000512" rpy="-7.878073216300372e-15 -4.1640546262836087e-13 5.3958980296073275e-15"/>
+    <axis xyz="-8.698055296851647e-14 1.8287579293696935e-13 1.0000000000000016"/>
+    <parent link="r_forearm"/>
+    <child link="r_wrist_1"/>
+    <limit lower="-1.6057029118347832" upper="1.6057029118347832" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_wrist_1">
+    <inertial>
+      <mass value="0.12269276206782376"/>
+      <origin xyz="-1.4544607175177166e-4 1.559247070407055e-4 0.022377800821402394" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_wrist_roll" type="revolute">
+    <origin xyz="7.632783294297951e-17 2.498001805406602e-16 3.3306690738754696e-16" rpy="6.3169412432885e-16 1.7406865879254774e-16 -2.979556976579619e-16"/>
+    <axis xyz="0.9999999999999993 -2.685670425200266e-16 -1.1855750756128986e-16"/>
+    <parent link="r_wrist_1"/>
+    <child link="r_wrist_2"/>
+    <limit lower="-0.3490658503988659" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_wrist_2">
+    <inertial>
+      <mass value="0.021188357245777188"/>
+      <origin xyz="5.05499045400093e-11 7.897372606293362e-4 -0.004696960055006527" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_wrist_pitch" type="revolute">
+    <origin xyz="5.551115123125783e-17 -5.551115123125783e-17 -2.220446049250313e-16" rpy="3.2643052087827604e-16 -6.19079440489223e-17 -2.4254449631448003e-16"/>
+    <axis xyz="2.668306249781552e-16 -0.9999999999999994 -6.594507967859708e-16"/>
+    <parent link="r_wrist_2"/>
+    <child link="r_hand_palm"/>
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_palm">
+    <inertial>
+      <mass value="0.2020068404688116"/>
+      <origin xyz="-0.003982157972782507 -0.0021135289059891482 -0.05842371394186491" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_index_add" type="revolute">
+    <origin xyz="0.02249999999999991 0.0015000000000005564 -0.06859999999999972" rpy="-1.8219785097875794e-15 0.2967059728390403 3.141592653589792"/>
+    <axis xyz="-2.8199000035257554e-16 -0.9999999999999994 1.3731809894432951e-15"/>
+    <parent link="r_hand_palm"/>
+    <child link="r_hand_index_1"/>
+    <limit lower="0" upper="0.2617993877991494" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_index_1">
+    <inertial>
+      <mass value="0.019232477290189804"/>
+      <origin xyz="-0.008420124408709713 0.003850331678233287 -0.01714942611279774" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_middle_prox" type="revolute">
+    <origin xyz="0.009600000000000018 0.0015000000000005564 -0.1029999999999997" rpy="-1.5201721959961367e-15 1.796577209917105e-15 3.1415926535897922"/>
+    <axis xyz="-0.9999999999999996 -4.4302906341327945e-15 6.654290833629744e-16"/>
+    <parent link="r_hand_palm"/>
+    <child link="r_hand_middle_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_middle_1">
+    <inertial>
+      <mass value="0.007486365997467528"/>
+      <origin xyz="5.610258533731913e-5 0.0011131046827904112 -0.01742880983276912" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_pinkie_prox" type="revolute">
+    <origin xyz="-0.03598268094316612 0.0023777595791096284 -0.09206828131946365" rpy="4.1095343994377795e-4 -0.0872664625997284 3.115412714809877"/>
+    <axis xyz="-0.9999999999999997 4.2975605712980425e-15 -3.191891195797325e-16"/>
+    <parent link="r_hand_palm"/>
+    <child link="r_hand_pinkie_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_pinkie_1">
+    <inertial>
+      <mass value="0.006357585733638135"/>
+      <origin xyz="3.616260147435227e-5 0.0012147050941129778 -0.015053109692718447" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_ring_prox" type="revolute">
+    <origin xyz="-0.015417755558119937 0.001849813728471178 -0.09788067183884414" rpy="-1.8555868085958955e-15 -0.08726646259972873 3.115412714809877"/>
+    <axis xyz="-0.9999999999999997 -3.617118096769719e-15 -4.73232564246473e-15"/>
+    <parent link="r_hand_palm"/>
+    <child link="r_hand_ring_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_ring_1">
+    <inertial>
+      <mass value="0.007486365997467528"/>
+      <origin xyz="5.6102585337293107e-5 0.0011131045999587252 -0.017428809839565573" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_thumb_add" type="revolute">
+    <origin xyz="0.0233748632563905 0.0030000000000003912 -0.03452383847355461" rpy="1.673677624598278e-15 -0.22689280275926468 -4.805912162985855e-17"/>
+    <axis xyz="4.996003610813204e-16 2.6775506528309486e-15 0.9999999999999999"/>
+    <parent link="r_hand_palm"/>
+    <child link="r_hand_thumb_1"/>
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_thumb_1">
+    <inertial>
+      <mass value="0.02894174189037044"/>
+      <origin xyz="0.0183756324403817 -4.55521018183358e-5 0.002126473485347669" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_thumb_prox" type="revolute">
+    <origin xyz="0.03807465449956053 0.0034691095803252026 -0.0036017448035498" rpy="1.4305744121375041 0.1970305979589347 -1.4222071875351316"/>
+    <axis xyz="-1.0000000000000009 -1.426636586643326e-14 2.5500435096859064e-15"/>
+    <parent link="r_hand_thumb_1"/>
+    <child link="r_hand_thumb_2"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_thumb_2">
+    <inertial>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691406974989604e-5 3.0451621296398446e-4 -0.014894613060785539" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_thumb_dist" type="revolute">
+    <origin xyz="-5.551115123125783e-17 -0.003710625528295264 -0.03483505788984388" rpy="-0.0632887739526204 3.164135620181696e-15 1.4696577288475478e-14"/>
+    <axis xyz="-1.0000000000000022 -2.8857703148647843e-14 2.7310966301870412e-16"/>
+    <parent link="r_hand_thumb_2"/>
+    <child link="r_hand_thumb_3"/>
+    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_thumb_3">
+    <inertial>
+      <mass value="0.008481423658381124"/>
+      <origin xyz="-2.8601851543103015e-5 0.002737889256839321 -0.016935937291633126" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_ring_dist" type="revolute">
+    <origin xyz="4.163336342344337e-17 -0.0015000000000001956 -0.039999999999999425" rpy="-1.387778780781446e-17 -4.163336342344337e-17 -7.632783294297954e-17"/>
+    <axis xyz="-0.9999999999999997 4.0592529337857286e-16 -5.898059818321164e-17"/>
+    <parent link="r_hand_ring_1"/>
+    <child link="r_hand_ring_2"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_ring_2">
+    <inertial>
+      <mass value="0.007251413355667432"/>
+      <origin xyz="4.43251343077225e-5 0.00275470906266162 -0.018890876418029168" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_pinkie_dist" type="revolute">
+    <origin xyz="2.7755575615628914e-17 -0.001514193309378964 -0.03499938883211856" rpy="-0.0012956915198226522 -1.1102230246251565e-16 -2.498001805406603e-16"/>
+    <axis xyz="-0.9999999999999997 1.122199955094049e-15 -2.5905081939964974e-15"/>
+    <parent link="r_hand_pinkie_1"/>
+    <child link="r_hand_pinkie_2"/>
+    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_pinkie_2">
+    <inertial>
+      <mass value="0.007240237490764073"/>
+      <origin xyz="2.1391072559044655e-5 0.0027712863562942003 -0.018930305880602127" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_middle_dist" type="revolute">
+    <origin xyz="6.938893903907228e-18 -0.0014999999999997238 -0.04000000000000015" rpy="-7.535550938194039e-8 1.5894403848637495e-16 -2.1003028960117637e-17"/>
+    <axis xyz="-0.9999999999999997 -2.0389677846702298e-15 2.95065603973689e-15"/>
+    <parent link="r_hand_middle_1"/>
+    <child link="r_hand_middle_2"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_middle_2">
+    <inertial>
+      <mass value="0.007251413355667432"/>
+      <origin xyz="4.432513430769475e-5 0.0027547091926723166 -0.018890876399070666" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_index_prox" type="revolute">
+    <origin xyz="-0.009192533317427781 2.7755575615628914e-17 -0.030713451316238427" rpy="-6.519807412594219e-16 2.220446049250313e-16 5.507069409868563e-17"/>
+    <axis xyz="-0.9999999999999993 3.640657721582126e-15 -2.137179322403427e-15"/>
+    <parent link="r_hand_index_1"/>
+    <child link="r_hand_index_2"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_index_2">
+    <inertial>
+      <mass value="0.007486365997467528"/>
+      <origin xyz="5.610258533736423e-5 0.0011131050125119946 -0.01742880980571504" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="r_index_dist" type="revolute">
+    <origin xyz="9.71445146547012e-17 -0.0014999999999999458 -0.04000000000000048" rpy="1.0015571678219023e-16 1.1102230246251565e-16 -3.169258475446692e-16"/>
+    <axis xyz="-0.9999999999999993 -4.883094118944207e-16 -5.273559366969493e-16"/>
+    <parent link="r_hand_index_2"/>
+    <child link="r_hand_index_3"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="r_hand_index_3">
+    <inertial>
+      <mass value="0.007251413355667432"/>
+      <origin xyz="4.432513430773638e-5 0.0027547026217409343 -0.01889087735725714" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_shoulder_roll" type="revolute">
+    <origin xyz="0.0024999999999943956 0.09330000000000116 -0.0043301270189194385" rpy="-0.24434609527918347 1.047197551196627 1.5797638804743949e-15"/>
+    <axis xyz="1.0000000000000002 -1.9872992140790302e-14 -1.2378986724570495e-14"/>
+    <parent link="l_shoulder_1"/>
+    <child link="l_shoulder_2"/>
+    <limit lower="-0.2617993877991494" upper="2.6179938779914944" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_shoulder_2">
+    <inertial>
+      <mass value="0.6125478069741506"/>
+      <origin xyz="0.002666532391712599 0.005154325370767043 -0.05018707330365968" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_arm_ft_sensor" type="fixed">
+    <origin xyz="-0.004349999999998785 0.015000000000000041 -0.08430000000000004" rpy="-1.1378201852273147e-16 1.3234422238661558e-14 -1.1890463860373368e-14"/>
+    <parent link="l_shoulder_2"/>
+    <child link="l_shoulder_3"/>
+  </joint>
+  <link name="l_shoulder_3">
+    <inertial>
+      <mass value="0.4623249532467936"/>
+      <origin xyz="1.031584390220816e-4 -0.0021062597852904985 -0.056341881668335314" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_shoulder_yaw" type="revolute">
+    <origin xyz="4.579669976578771e-16 -2.275957200481571e-15 -0.09250000000000014" rpy="9.914396488463463e-14 8.846976970455778e-13 1.2938419798979962e-14"/>
+    <axis xyz="8.979207351614282e-13 -9.88121240574378e-14 -0.9999999999999922"/>
+    <parent link="l_shoulder_3"/>
+    <child link="l_upper_arm"/>
+    <limit lower="-0.9075712110370514" upper="1.4311699866353502" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_upper_arm">
+    <inertial>
+      <mass value="5.152081516462353"/>
+      <origin xyz="-0.0016360906950566995 2.8760919938605745e-4 -0.029129484429294413" rpy="0 -0 0"/>
+      <inertia ixx="0.016843398710057952" ixy="-1.492592009842048e-5" ixz="-2.0597160065554028e-4" iyy="0.016822632148716037" iyz="-5.136236906348136e-4" izz="0.007391461210731708"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_upperarm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_upperarm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_elbow" type="revolute">
+    <origin xyz="0.010000000000109279 -0.0015000000000126024 -0.12370000000000425" rpy="9.882562686073715e-14 0.0410236199281351 -1.5393375483343204e-14"/>
+    <axis xyz="1.7510203204685582e-14 -1.0000000000000009 -1.9873021927624366e-13"/>
+    <parent link="l_upper_arm"/>
+    <child link="l_forearm"/>
+    <limit lower="-0.08726646259971647" upper="2.0943951023931953" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_forearm">
+    <inertial>
+      <mass value="1.5127280243277526"/>
+      <origin xyz="-0.017870832470124914 3.528028289372931e-4 -0.12013406586454389" rpy="0 -0 0"/>
+      <inertia ixx="0.009999999999999998" ixy="0" ixz="0" iyy="0.009999999999999998" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_forearm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_forearm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_wrist_yaw" type="revolute">
+    <origin xyz="-0.014999999999964521 0.002000000000021568 -0.24434999999998203" rpy="1.4450819996192198e-13 7.473327512386163e-13 -8.701491201299094e-14"/>
+    <axis xyz="8.856976024991497e-13 -9.886813268169502e-14 -0.9999999999999929"/>
+    <parent link="l_forearm"/>
+    <child link="l_wrist_1"/>
+    <limit lower="-1.6057029118347832" upper="1.6057029118347832" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_wrist_1">
+    <inertial>
+      <mass value="0.1226928"/>
+      <origin xyz="1.4545073498396788e-4 -1.5595311920038601e-4 0.022377795694245" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_wrist_roll" type="revolute">
+    <origin xyz="8.326672684688674e-17 -1.1102230246251565e-16 -5.551115123125783e-17" rpy="3.895775574965646e-16 -1.8735013540549517e-16 -3.9200515392339544e-16"/>
+    <axis xyz="-1.0000000000000007 4.979503409000692e-16 9.020562075079414e-17"/>
+    <parent link="l_wrist_1"/>
+    <child link="l_wrist_2"/>
+    <limit lower="-0.3490658503988659" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_wrist_2">
+    <inertial>
+      <mass value="0.02118836"/>
+      <origin xyz="-7.4183919215875535e-9 -7.897157534373368e-4 -0.0046969679508168105" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_wrist_pitch" type="revolute">
+    <origin xyz="-2.220446049250313e-16 -1.942890293094024e-16 3.3306690738754696e-16" rpy="-2.3886932623546183e-16 7.632783294297951e-16 2.705372411553399e-16"/>
+    <axis xyz="-1.820663438805227e-16 -1 -1.1667247808882283e-15"/>
+    <parent link="l_wrist_2"/>
+    <child link="l_hand_palm"/>
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_palm">
+    <inertial>
+      <mass value="0.20364988213680776"/>
+      <origin xyz="-0.003950502224178115 0.0019881930945492288 -0.058015852438740544" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_index_add" type="revolute">
+    <origin xyz="0.02249999999999995 -0.001500000000000501 -0.06859999999999994" rpy="-1.252207604908352e-15 -0.2967059728390365 1.0514741729292331e-16"/>
+    <axis xyz="1.2345755072974314e-15 0.9999999999999999 -1.5044469189520817e-15"/>
+    <parent link="l_hand_palm"/>
+    <child link="l_hand_index_1"/>
+    <limit lower="0" upper="0.2617993877991494" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_index_1">
+    <inertial>
+      <mass value="0.01923264"/>
+      <origin xyz="0.008430306749277854 0.0038510231844406384 -0.017148502808541133" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_middle_prox" type="revolute">
+    <origin xyz="0.009600000000000067 -0.0015000000000003344 -0.10300000000000004" rpy="5.479728916542452e-4 2.185751579730777e-15 -9.227288936186277e-16"/>
+    <axis xyz="-1.0000000000000004 -3.7164962121615924e-17 3.448299563192889e-15"/>
+    <parent link="l_hand_palm"/>
+    <child link="l_hand_middle_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_middle_1">
+    <inertial>
+      <mass value="0.007486366"/>
+      <origin xyz="5.609414423399586e-5 0.0010938363913530202 -0.0174225309754375" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_pinkie_prox" type="revolute">
+    <origin xyz="-0.0359823222495273 -0.0023883158589562137 -0.09206560929209884" rpy="-1.9934588677535882e-5 0.08728175651239214 0.026187612448127378"/>
+    <axis xyz="-0.9999999998538297 7.644772464032958e-6 -1.5293757710324596e-5"/>
+    <parent link="l_hand_palm"/>
+    <child link="l_hand_pinkie_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_pinkie_1">
+    <inertial>
+      <mass value="0.006357586"/>
+      <origin xyz="3.6554577562467744e-5 0.0012135491682558897 -0.015052861815374408" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_ring_prox" type="revolute">
+    <origin xyz="-0.015417755558119903 -0.0018498137284706784 -0.09788067183884441" rpy="-4.001819088243124e-5 0.08726646259973235 0.026179938779914515"/>
+    <axis xyz="-1.0000000000000004 2.1873778829895052e-17 3.427813588530171e-15"/>
+    <parent link="l_hand_palm"/>
+    <child link="l_hand_ring_1"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_ring_1">
+    <inertial>
+      <mass value="0.007486366"/>
+      <origin xyz="5.610953414397422e-5 0.001113903955753115 -0.017428756834488968" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_thumb_add" type="revolute">
+    <origin xyz="0.023374863256390335 -0.0029999999999996696 -0.034523838473555835" rpy="-0.040449700618591246 0.22331918636553127 2.960843541269833"/>
+    <axis xyz="-2.831068712794149e-15 6.453171330633722e-16 -1"/>
+    <parent link="l_hand_palm"/>
+    <child link="l_hand_thumb_1"/>
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_thumb_1">
+    <inertial>
+      <mass value="0.029029542280278556"/>
+      <origin xyz="-0.018039176431428286 -0.0028662725726853466 0.0021177719486905056" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_thumb_prox" type="revolute">
+    <origin xyz="-0.03809319745034652 -0.0032591938585445623 -0.0036017448037202193" rpy="1.430574412172528 -0.1970305979994932 1.5984202269739927"/>
+    <axis xyz="-0.9999999999999998 1.5642875883514762e-11 1.7937541035850657e-10"/>
+    <parent link="l_hand_thumb_1"/>
+    <child link="l_hand_thumb_2"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_thumb_2">
+    <inertial>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691393252494242e-5 3.0451625727886955e-4 -0.014894613059881514" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_thumb_dist" type="revolute">
+    <origin xyz="5.551115123125783e-17 -0.0037106254246526693 -0.034835057900884356" rpy="-0.0632887709773814 1.1102230246251565e-16 2.6684383869213243e-15"/>
+    <axis xyz="-0.9999999999999997 4.263839635442148e-12 1.8000612565858527e-10"/>
+    <parent link="l_hand_thumb_2"/>
+    <child link="l_hand_thumb_3"/>
+    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_thumb_3">
+    <inertial>
+      <mass value="0.00839103052424309"/>
+      <origin xyz="-2.8909987974501394e-5 0.0027777675147018788 -0.016956792352400222" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_ring_dist" type="revolute">
+    <origin xyz="-2.7755575615628914e-17 -0.0014999999999998626 -0.04000000000000009" rpy="-1.204430863606553e-4 -5.551115123125783e-17 -6.591949208711866e-17"/>
+    <axis xyz="-1.0000000000000002 2.1042471424136875e-15 -3.3978286550657235e-16"/>
+    <parent link="l_hand_ring_1"/>
+    <child link="l_hand_ring_2"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_ring_2">
+    <inertial>
+      <mass value="0.007251413"/>
+      <origin xyz="4.433654030530642e-5 0.0027546754597598533 -0.01889085949732494" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_pinkie_dist" type="revolute">
+    <origin xyz="0 -0.0014999999959518229 -0.03500000000409309" rpy="-4.4386812336867395e-5 3.608224830031759e-16 -3.400058012914541e-16"/>
+    <axis xyz="-0.9999999998538295 7.645451295563488e-6 -1.5293418371443034e-5"/>
+    <parent link="l_hand_pinkie_1"/>
+    <child link="l_hand_pinkie_2"/>
+    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_pinkie_2">
+    <inertial>
+      <mass value="0.007240237"/>
+      <origin xyz="2.2378292628411067e-5 0.0027712834790767915 -0.018930353878106154" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_middle_dist" type="revolute">
+    <origin xyz="1.1102230246251565e-16 -0.0014999999999998626 -0.040000000000000036" rpy="0.017535706363213603 -2.3592239273284576e-16 -8.049862317525965e-17"/>
+    <axis xyz="-1.0000000000000004 -4.611751723658998e-16 -2.8219344323360823e-15"/>
+    <parent link="l_hand_middle_1"/>
+    <child link="l_hand_middle_2"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_middle_2">
+    <inertial>
+      <mass value="0.007251413"/>
+      <origin xyz="4.4316320155644157e-5 0.0027547229469275236 -0.018890877319942878" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_index_prox" type="revolute">
+    <origin xyz="0.009192533317427934 2.7755575615628914e-17 -0.03071345131623815" rpy="2.663478161982204e-16 8.326672684688674e-17 -1.3437669488421125e-16"/>
+    <axis xyz="-0.9999999999999999 7.452822674324313e-16 4.1355807667287065e-15"/>
+    <parent link="l_hand_index_1"/>
+    <child link="l_hand_index_2"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_index_2">
+    <inertial>
+      <mass value="0.007486366"/>
+      <origin xyz="5.6100110941745274e-5 0.001113133191428639 -0.01742880406449937" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="l_index_dist" type="revolute">
+    <origin xyz="1.1102230246251565e-16 -0.0015000000000004732 -0.03999999999999959" rpy="-7.482326192699012e-8 -0 -2.1792633073548092e-16"/>
+    <axis xyz="-0.9999999999999999 2.3144325758661227e-16 2.4980018780932863e-16"/>
+    <parent link="l_hand_index_2"/>
+    <child link="l_hand_index_3"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_hand_index_3">
+    <inertial>
+      <mass value="0.007251413"/>
+      <origin xyz="4.431356673249148e-5 0.0027546711855188366 -0.018890916917498335" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <joint name="neck_yaw_joint" type="revolute">
+    <origin xyz="0.011679488023179689 -9.677503327256982e-18 0.1583779958185998" rpy="-1.2299256863622814e-15 0.17453292519943311 -7.040232933848852e-15"/>
+    <axis xyz="5.551115123125783e-17 -1.0407701698506794e-17 1.0000000000000002"/>
+    <parent link="neck_link"/>
+    <child link="head_link"/>
+    <limit lower="-1.3962634015954636" upper="1.3962634015954636" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="head_link">
+    <inertial>
+      <mass value="2.000000000000001"/>
+      <origin xyz="0.040406180045669704 -4.254262598951279e-6 0.0013074297220510012" rpy="0 -0 0"/>
+      <inertia ixx="0.014268636485556811" ixy="-2.458069266749117e-7" ixz="5.550255193361971e-4" iyy="0.004580707834695642" iyz="-4.3342393217813975e-8" izz="0.01322280437463689"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_head.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_head.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </collision>
+  </link>
+  <link name="l_arm_ft"/>
+  <joint name="l_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.0043499999999990074 0.015000000000000069 -0.08430000000000004" rpy="3.14159265358978 -8.827137882952753e-17 -1.5707963267948901"/>
+    <parent link="l_shoulder_2"/>
+    <child link="l_arm_ft"/>
+  </joint>
+  <link name="r_arm_ft"/>
+  <joint name="r_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.0068499999999994746 -0.015000000000000041 -0.08429999999999993" rpy="-3.1415926535897865 1.4451318944920141e-16 1.5707963267948946"/>
+    <parent link="r_shoulder_2"/>
+    <child link="r_arm_ft"/>
+  </joint>
+  <link name="mobile_base_double_lidar"/>
+  <joint name="mobile_base_double_lidar_fixed_joint" type="fixed">
+    <origin xyz="0 0 0.031" rpy="0 -0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_double_lidar"/>
+  </joint>
+  <link name="torso"/>
+  <joint name="torso_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="chest_link"/>
+    <child link="torso"/>
+  </joint>
+  <link name="gaze"/>
+  <joint name="gaze_fixed_joint" type="fixed">
+    <origin xyz="0.051140163768605695 5.572796850796502e-17 -0.005076527617396742" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <parent link="head_link"/>
+    <child link="gaze"/>
+  </joint>
+  <link name="depth_center"/>
+  <joint name="depth_center_fixed_joint" type="fixed">
+    <origin xyz="0.05132104198001797 5.593391840255621e-17 0.05375374559540269" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <parent link="head_link"/>
+    <child link="depth_center"/>
+  </joint>
+  <link name="depth"/>
+  <joint name="depth_fixed_joint" type="fixed">
+    <origin xyz="0.05132675386498539 0.04448710000000006 0.05375475275483321" rpy="3.6174008641979e-6 3.4015943103992236e-6 6.378576785263269e-7"/>
+    <parent link="head_link"/>
+    <child link="depth"/>
+  </joint>
+  <link name="depth_rgb"/>
+  <joint name="depth_rgb_fixed_joint" type="fixed">
+    <origin xyz="0.05132675386498542 0.01848710000000006 0.05375475275483321" rpy="3.6174008641979e-6 3.4015943103992236e-6 6.378576785263269e-7"/>
+    <parent link="head_link"/>
+    <child link="depth_rgb"/>
+  </joint>
+  <link name="head_leopard_cyclopic"/>
+  <joint name="head_leopard_cyclopic_fixed_joint" type="fixed">
+    <origin xyz="0.06309093082190956 6.933524157692891e-17 -0.05739097266709292" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <parent link="head_link"/>
+    <child link="head_leopard_cyclopic"/>
+  </joint>
+  <link name="head_leopard_left"/>
+  <joint name="head_leopard_left_fixed_joint" type="fixed">
+    <origin xyz="0.06309093082190953 0.033510500000000075 -0.05739097266709292" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <parent link="head_link"/>
+    <child link="head_leopard_left"/>
+  </joint>
+  <link name="head_leopard_right"/>
+  <joint name="head_leopard_right_fixed_joint" type="fixed">
+    <origin xyz="0.06309093082190959 -0.03351049999999993 -0.05739097266709292" rpy="-1.3962634015954642 -1.0632884247878182e-17 -1.5707963267948954"/>
+    <parent link="head_link"/>
+    <child link="head_leopard_right"/>
+  </joint>
+  <link name="l_hand_index_skin_0"/>
+  <joint name="l_hand_index_skin_0_fixed_joint" type="fixed">
+    <origin xyz="-1.3877787807814457e-17 -0.002433918058236534 -0.03140545777888892" rpy="-5.286130912234566e-16 1.2225055986691187 -1.570796326794897"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_0"/>
+  </joint>
+  <link name="l_hand_index_skin_1"/>
+  <joint name="l_hand_index_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.0031311476143919548 -0.033280418005286916" rpy="-5.049308804587452e-16 1.2200949024613605 -1.570796326794897"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_1"/>
+  </joint>
+  <link name="l_hand_index_skin_10"/>
+  <joint name="l_hand_index_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000000000025 -0.004081940988398508 -0.03776668459795801" rpy="-3.1415926535897913 1.5049109712528748 1.5707963267948997"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_10"/>
+  </joint>
+  <link name="l_hand_index_skin_11"/>
+  <joint name="l_hand_index_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000113 -0.0031311476143919548 -0.033280418005286916" rpy="-5.049308804587451e-16 1.2200949024613599 -1.570796326794897"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_11"/>
+  </joint>
+  <link name="l_hand_index_skin_2"/>
+  <joint name="l_hand_index_skin_2_fixed_joint" type="fixed">
+    <origin xyz="-6.938893903907228e-18 -0.003758241653579991 -0.035192049408458936" rpy="-6.620570360759466e-16 1.3056813328515076 -1.5707963267948972"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_2"/>
+  </joint>
+  <link name="l_hand_index_skin_3"/>
+  <joint name="l_hand_index_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.004081940988398425 -0.03776668459795801" rpy="-3.1415926535897913 1.5049109712528748 1.5707963267948997"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_3"/>
+  </joint>
+  <link name="l_hand_index_skin_4"/>
+  <joint name="l_hand_index_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276338 -0.001192320688661208 -0.03799999999999998" rpy="3.1415926535897922 1.2994442229713599 2.7771555423255903"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_4"/>
+  </joint>
+  <link name="l_hand_index_skin_5"/>
+  <joint name="l_hand_index_skin_5_fixed_joint" type="fixed">
+    <origin xyz="1.3877787807814457e-17 -0.0034840921633512434 -0.03982136611863335" rpy="-3.1415926535897927 1.088751329798359 1.5707963267948972"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_5"/>
+  </joint>
+  <link name="l_hand_index_skin_6"/>
+  <joint name="l_hand_index_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999696 -0.001828801718873424 -0.04176963440415199" rpy="3.141592653589793 0.7788155893137823 2.5320677565812"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_6"/>
+  </joint>
+  <link name="l_hand_index_skin_7"/>
+  <joint name="l_hand_index_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-6.938893903907228e-18 -2.9018466437888413e-4 -0.043259640911881" rpy="-3.141592653589793 0.6209480183022732 1.571212482632116"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_7"/>
+  </joint>
+  <link name="l_hand_index_skin_8"/>
+  <joint name="l_hand_index_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000000000025 -0.0018288017188733685 -0.041769634404151934" rpy="-3.1415926535897927 0.7788155893137829 0.6095248970085935"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_8"/>
+  </joint>
+  <link name="l_hand_index_skin_9"/>
+  <joint name="l_hand_index_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525942276387 -0.001192320688661208 -0.03799999999999998" rpy="-3.141592653589792 1.2994442229713608 0.36443711126420336"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_9"/>
+  </joint>
+  <link name="l_hand_middle_skin_0"/>
+  <joint name="l_hand_middle_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0 -0.002433918058236506 -0.03140545777888887" rpy="1.626501819149097e-16 1.22250559866912 -1.5707963267948966"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_0"/>
+  </joint>
+  <link name="l_hand_middle_skin_1"/>
+  <joint name="l_hand_middle_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000043 -0.003131147614391927 -0.033280418005286805" rpy="1.615778817467984e-16 1.2200949024613614 -1.5707963267948966"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_1"/>
+  </joint>
+  <link name="l_hand_middle_skin_10"/>
+  <joint name="l_hand_middle_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003299999999999973 -0.004081940988398425 -0.037766684597957956" rpy="3.1415926535897922 1.5049109712528765 1.5707963267948972"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_10"/>
+  </joint>
+  <link name="l_hand_middle_skin_11"/>
+  <joint name="l_hand_middle_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003299999999999994 -0.0031311476143918715 -0.033280418005286805" rpy="1.615778817467984e-16 1.2200949024613614 -1.5707963267948966"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_11"/>
+  </joint>
+  <link name="l_hand_middle_skin_2"/>
+  <joint name="l_hand_middle_skin_2_fixed_joint" type="fixed">
+    <origin xyz="-6.938893903907228e-18 -0.0037582416535799634 -0.035192049408458936" rpy="2.118582515443029e-16 1.305681332851508 -1.5707963267948966"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_2"/>
+  </joint>
+  <link name="l_hand_middle_skin_3"/>
+  <joint name="l_hand_middle_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000113 -0.004081940988398369 -0.03776668459795801" rpy="3.1415926535897922 1.5049109712528765 1.5707963267948968"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_3"/>
+  </joint>
+  <link name="l_hand_middle_skin_4"/>
+  <joint name="l_hand_middle_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276356 -0.0011923206886611804 -0.03799999999999998" rpy="3.1415926535897922 1.2994442229713614 2.7771555423255903"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_4"/>
+  </joint>
+  <link name="l_hand_middle_skin_5"/>
+  <joint name="l_hand_middle_skin_5_fixed_joint" type="fixed">
+    <origin xyz="1.0408340855860843e-17 -0.0034840921633511046 -0.03982136611863335" rpy="3.141592653589793 1.0887513297983595 1.570796326794897"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_5"/>
+  </joint>
+  <link name="l_hand_middle_skin_6"/>
+  <joint name="l_hand_middle_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.003300000000000008 -0.0018288017188733685 -0.04176963440415188" rpy="3.1415926535897927 0.7788155893137828 2.5320677565811995"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_6"/>
+  </joint>
+  <link name="l_hand_middle_skin_7"/>
+  <joint name="l_hand_middle_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-3.469446951953614e-18 -2.9018466437885637e-4 -0.04325964091188095" rpy="3.141592653589793 0.6209480183022731 1.571212482632116"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_7"/>
+  </joint>
+  <link name="l_hand_middle_skin_8"/>
+  <joint name="l_hand_middle_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.003299999999999994 -0.0018288017188733963 -0.041769634404151934" rpy="-3.141592653589793 0.7788155893137828 0.6095248970085932"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_8"/>
+  </joint>
+  <link name="l_hand_middle_skin_9"/>
+  <joint name="l_hand_middle_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.0059295259422763695 -0.001192320688661208 -0.03799999999999998" rpy="-3.1415926535897922 1.2994442229713608 0.3644371112642029"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_9"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_0"/>
+  <joint name="l_hand_pinkie_skin_0_fixed_joint" type="fixed">
+    <origin xyz="1.1364587082021704e-6 -0.0024339180633243807 -0.03140545776518122" rpy="4.4810406990145916e-5 1.222505598463966 -1.5707618523704918"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_0"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_1"/>
+  <joint name="l_hand_pinkie_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003301159802142385 -0.003131172849448638 -0.033280367523160825" rpy="4.451498643578038e-5 1.2200949022586114 -1.5707621667995164"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_10"/>
+  <joint name="l_hand_pinkie_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003298778855785424 -0.004081915763448796 -0.037766735051979805" rpy="3.14136036390978 1.5049109693635563 1.5705568956520668"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_10"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_11"/>
+  <joint name="l_hand_pinkie_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003298840196892895 -0.0031311223894700813 -0.033280468459722046" rpy="4.4514986435780384e-5 1.2200949022586114 -1.5707621667995162"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_11"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_2"/>
+  <joint name="l_hand_pinkie_skin_2_fixed_joint" type="fixed">
+    <origin xyz="1.1842435866243894e-6 -0.0037582416586290635 -0.0351920493944633" rpy="5.8367315429754e-5 1.305681332537708 -1.570747644146057"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_2"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_3"/>
+  <joint name="l_hand_pinkie_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033012211432498564 -0.00408196622342738 -0.03776663411541853" rpy="3.14136036390978 1.5049109693635563 1.5705568956520668"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_3"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_4"/>
+  <joint name="l_hand_pinkie_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005930772745783179 -0.0011923660276871306 -0.037999909302654955" rpy="3.141572315440389 1.2994585118923023 2.7771283028717044"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_4"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_5"/>
+  <joint name="l_hand_pinkie_skin_5_fixed_joint" type="fixed">
+    <origin xyz="1.2571376604118834e-6 -0.003484092168408337 -0.03982136610406428" rpy="3.1415596646367674 1.0887513294579219 1.570759451523612"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_5"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_6"/>
+  <joint name="l_hand_pinkie_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0033012995883024976 -0.00182882695396816 -0.04176958392088087" rpy="3.1415803523625088 0.7788281285900823 2.532051470238895"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_6"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_7"/>
+  <joint name="l_hand_pinkie_skin_7_fixed_joint" type="fixed">
+    <origin xyz="1.3341394995113054e-6 -2.901846695293475e-4 -0.04325964089653633" rpy="3.141573850067606 0.6209480244661378 1.571193897169884"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_7"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_8"/>
+  <joint name="l_hand_pinkie_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.003298700410732769 -0.0018287764939896034 -0.041769684857442146" rpy="3.1415803529363586 0.7788030498279591 0.6095086111791652"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_8"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_9"/>
+  <joint name="l_hand_pinkie_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005928279137036092 -0.0011922753598834768 -0.0380000906680969" rpy="3.14157231834453 1.2994299338602708 0.36440987468608"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_9"/>
+  </joint>
+  <link name="l_hand_ring_skin_0"/>
+  <joint name="l_hand_ring_skin_0_fixed_joint" type="fixed">
+    <origin xyz="6.938893903907228e-18 -0.0024339180582365616 -0.03140545777888881" rpy="5.692756367021836e-16 1.222505598669119 -1.5707963267948966"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_0"/>
+  </joint>
+  <link name="l_hand_ring_skin_1"/>
+  <joint name="l_hand_ring_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000095 -0.0031311476143919548 -0.033280418005286805" rpy="5.655225861137946e-16 1.2200949024613605 -1.5707963267948966"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_1"/>
+  </joint>
+  <link name="l_hand_ring_skin_10"/>
+  <joint name="l_hand_ring_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000043 -0.004081940988398369 -0.037766684597957956" rpy="3.141592653589791 1.5049109712528765 1.5707963267948966"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_10"/>
+  </joint>
+  <link name="l_hand_ring_skin_11"/>
+  <joint name="l_hand_ring_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999887 -0.003131147614391927 -0.03328041800528686" rpy="5.655225861137945e-16 1.2200949024613605 -1.5707963267948966"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_11"/>
+  </joint>
+  <link name="l_hand_ring_skin_2"/>
+  <joint name="l_hand_ring_skin_2_fixed_joint" type="fixed">
+    <origin xyz="-5.204170427930421e-18 -0.003758241653579991 -0.03519204940845888" rpy="6.885393175189842e-16 1.305681332851508 -1.5707963267948963"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_2"/>
+  </joint>
+  <link name="l_hand_ring_skin_3"/>
+  <joint name="l_hand_ring_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003300000000000008 -0.004081940988398397 -0.037766684597957956" rpy="3.141592653589791 1.5049109712528765 1.5707963267948968"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_3"/>
+  </joint>
+  <link name="l_hand_ring_skin_4"/>
+  <joint name="l_hand_ring_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276373 -0.0011923206886612359 -0.03799999999999992" rpy="3.141592653589792 1.299444222971361 2.7771555423255903"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_4"/>
+  </joint>
+  <link name="l_hand_ring_skin_5"/>
+  <joint name="l_hand_ring_skin_5_fixed_joint" type="fixed">
+    <origin xyz="6.938893903907228e-18 -0.00348409216335116 -0.03982136611863335" rpy="3.1415926535897927 1.088751329798359 1.5707963267948968"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_5"/>
+  </joint>
+  <link name="l_hand_ring_skin_6"/>
+  <joint name="l_hand_ring_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.003299999999999994 -0.0018288017188733685 -0.041769634404151934" rpy="3.1415926535897927 0.7788155893137829 2.5320677565811995"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_6"/>
+  </joint>
+  <link name="l_hand_ring_skin_7"/>
+  <joint name="l_hand_ring_skin_7_fixed_joint" type="fixed">
+    <origin xyz="1.9081958235744878e-17 -2.9018466437888413e-4 -0.04325964091188089" rpy="3.141592653589793 0.6209480183022733 1.5712124826321159"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_7"/>
+  </joint>
+  <link name="l_hand_ring_skin_8"/>
+  <joint name="l_hand_ring_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999852 -0.0018288017188733685 -0.041769634404151934" rpy="-3.141592653589793 0.7788155893137823 0.6095248970085929"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_8"/>
+  </joint>
+  <link name="l_hand_ring_skin_9"/>
+  <joint name="l_hand_ring_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525942276356 -0.0011923206886611804 -0.03799999999999992" rpy="-3.1415926535897927 1.2994442229713594 0.3644371112642026"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_9"/>
+  </joint>
+  <link name="l_hand_thumb_skin_0"/>
+  <joint name="l_hand_thumb_skin_0_fixed_joint" type="fixed">
+    <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_0"/>
+  </joint>
+  <link name="l_hand_thumb_skin_1"/>
+  <joint name="l_hand_thumb_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003299999977533996 -0.0031308168507229173 -0.028280418005880898" rpy="3.141592653571252 -0.6108652381980162 -1.570796327023918"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_10"/>
+  <joint name="l_hand_thumb_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000023277627 -0.004081610224701271 -0.03276668459736391" rpy="3.1415926535743104 -1.5049109712528579 -1.5707963267955443"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_10"/>
+  </joint>
+  <link name="l_hand_thumb_skin_11"/>
+  <joint name="l_hand_thumb_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000022465971 -0.0031308168506947176 -0.02828041800469284" rpy="-1.1627790682026587e-11 -1.220094902461357 1.5707963268688572"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_11"/>
+  </joint>
+  <link name="l_hand_thumb_skin_2"/>
+  <joint name="l_hand_thumb_skin_2_fixed_joint" type="fixed">
+    <origin xyz="-2.2812751687695254e-11 -0.0037579108898968816 -0.030192049408458887" rpy="-1.0975528579504133e-11 -1.305681332851502 1.5707963268508718"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_2"/>
+  </joint>
+  <link name="l_hand_thumb_skin_3"/>
+  <joint name="l_hand_thumb_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999767223676 -0.004081610224729415 -0.03276668459855195" rpy="3.141592653571252 -0.6108652381980161 -1.570796327023918"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_3"/>
+  </joint>
+  <link name="l_hand_thumb_skin_4"/>
+  <joint name="l_hand_thumb_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525918969086 -0.0011919899250033839 -0.03300000000106727" rpy="1.570796323948815 -1.507507555817487 -1.5707963239587988"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_4"/>
+  </joint>
+  <link name="l_hand_thumb_skin_5"/>
+  <joint name="l_hand_thumb_skin_5_fixed_joint" type="fixed">
+    <origin xyz="-2.364491935580304e-11 -0.0034837613996680783 -0.034821366118633304" rpy="3.141592653576766 -1.0887513297983578 -1.57079632687865"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_5"/>
+  </joint>
+  <link name="l_hand_thumb_skin_6"/>
+  <joint name="l_hand_thumb_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999760114918 -0.0018284709552043588 -0.03676963440474591" rpy="-4.620360040236946e-16 -0.7657426237199224 -1.5707963267949006"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_6"/>
+  </joint>
+  <link name="l_hand_thumb_skin_7"/>
+  <joint name="l_hand_thumb_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-2.4250157437677444e-11 -2.898539006957468e-4 -0.038259640911880916" rpy="-3.1415628662062685 -0.620948017682013 -1.5704313693095489"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_7"/>
+  </joint>
+  <link name="l_hand_thumb_skin_8"/>
+  <joint name="l_hand_thumb_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000239885308 -0.0018284709551761869 -0.036769634403557905" rpy="3.071469777395219 -0.7763161157147594 -2.432155397543958"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_8"/>
+  </joint>
+  <link name="l_hand_thumb_skin_9"/>
+  <joint name="l_hand_thumb_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525965583604 -0.0011919899249527854 -0.032999999998932564" rpy="2.9258803345668243 -1.2928372761145006 -2.5531132071417293"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_9"/>
+  </joint>
+  <link name="base_link"/>
+  <joint name="base_link_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="mobile_base_lidar_B"/>
+  <joint name="mobile_base_lidar_B_fixed_joint" type="fixed">
+    <origin xyz="-0.085 0 0.031" rpy="0 -0 3.141592653589793"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_lidar_B"/>
+  </joint>
+  <link name="mobile_base_lidar_F"/>
+  <joint name="mobile_base_lidar_F_fixed_joint" type="fixed">
+    <origin xyz="0.07 0 0.031" rpy="0 -0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_lidar_F"/>
+  </joint>
+  <link name="r_hand_index_skin_0"/>
+  <joint name="r_hand_index_skin_0_fixed_joint" type="fixed">
+    <origin xyz="3.469446951953614e-17 -0.002433928982192385 -0.03140545693228214" rpy="2.8463754567347765e-16 1.2225052508328904 -1.5707963267948963"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_0"/>
+  </joint>
+  <link name="r_hand_index_skin_1"/>
+  <joint name="r_hand_index_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.0031311591905268388 -0.033280416916158295" rpy="2.4236659217065896e-16 1.2200945546251307 -1.5707963267948963"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_1"/>
+  </joint>
+  <link name="r_hand_index_skin_10"/>
+  <joint name="r_hand_index_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999696 -0.0040819541250192715 -0.03776668317810877" rpy="3.1415926535897922 1.5049113190891115 1.5707963267948952"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_10"/>
+  </joint>
+  <link name="r_hand_index_skin_11"/>
+  <joint name="r_hand_index_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000043 -0.0031311591905267833 -0.033280416916158295" rpy="2.4236659217065896e-16 1.2200945546251307 -1.5707963267948963"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_11"/>
+  </joint>
+  <link name="r_hand_index_skin_2"/>
+  <joint name="r_hand_index_skin_2_fixed_joint" type="fixed">
+    <origin xyz="6.938893903907228e-18 -0.003758253894649538 -0.03519204810120419" rpy="3.177869701880381e-16 1.3056809850152777 -1.5707963267948961"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_2"/>
+  </joint>
+  <link name="r_hand_index_skin_3"/>
+  <joint name="r_hand_index_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000043 -0.004081954125019299 -0.03776668317810877" rpy="3.1415926535897922 1.5049113190891115 1.5707963267948952"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_3"/>
+  </joint>
+  <link name="r_hand_index_skin_4"/>
+  <joint name="r_hand_index_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276359 -0.0011923339064377758 -0.03799999958526529" rpy="-3.1415914410880514 1.299444346948154 2.777156710461142"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_4"/>
+  </joint>
+  <link name="r_hand_index_skin_5"/>
+  <joint name="r_hand_index_skin_5_fixed_joint" type="fixed">
+    <origin xyz="6.938893903907228e-18 -0.003484106014664784 -0.03982136490673749" rpy="3.141592653589793 1.0887516776345891 1.5707963267948963"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_5"/>
+  </joint>
+  <link name="r_hand_index_skin_6"/>
+  <joint name="r_hand_index_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000043 -0.0018288162478654058 -0.04176963376802595" rpy="-3.141592252887904 0.7788157884423246 2.5320680380490246"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_6"/>
+  </joint>
+  <link name="r_hand_index_skin_7"/>
+  <joint name="r_hand_index_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-2.7755575615628914e-17 -2.901997116492028e-4 -0.04325964081094158" rpy="-3.1415926534118155 0.6209483661384732 1.5712124827356644"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_7"/>
+  </joint>
+  <link name="r_hand_index_skin_8"/>
+  <joint name="r_hand_index_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999835 -0.0018288162478654058 -0.04176963376802595" rpy="3.141592252887904 0.7788157884423246 0.6095246155407682"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_8"/>
+  </joint>
+  <link name="r_hand_index_skin_9"/>
+  <joint name="r_hand_index_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525942276352 -0.0011923339064378036 -0.03799999958526534" rpy="3.1415914410880514 1.2994443469481536 0.36443594312865046"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_9"/>
+  </joint>
+  <link name="r_hand_middle_skin_0"/>
+  <joint name="r_hand_middle_skin_0_fixed_joint" type="fixed">
+    <origin xyz="-2.0816681711721685e-17 -0.002433918058236506 -0.03140545777888887" rpy="-2.4397527287236403e-16 1.2225055986691193 -1.570796326794897"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_0"/>
+  </joint>
+  <link name="r_hand_middle_skin_1"/>
+  <joint name="r_hand_middle_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003299999999999987 -0.0031311476143918993 -0.033280418005286916" rpy="-2.4236682262019717e-16 1.2200949024613599 -1.5707963267948972"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_1"/>
+  </joint>
+  <link name="r_hand_middle_skin_10"/>
+  <joint name="r_hand_middle_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000113 -0.004081940988398369 -0.03776668459795801" rpy="-3.141592653589792 1.5049109712528799 1.5707963267948983"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_10"/>
+  </joint>
+  <link name="r_hand_middle_skin_11"/>
+  <joint name="r_hand_middle_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000000000025 -0.0031311476143918715 -0.03328041800528686" rpy="-2.4236682262019727e-16 1.2200949024613594 -1.5707963267948972"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_11"/>
+  </joint>
+  <link name="r_hand_middle_skin_2"/>
+  <joint name="r_hand_middle_skin_2_fixed_joint" type="fixed">
+    <origin xyz="-4.5102810375396984e-17 -0.003758241653579991 -0.035192049408458936" rpy="-3.177873773164535e-16 1.3056813328515076 -1.5707963267948972"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_2"/>
+  </joint>
+  <link name="r_hand_middle_skin_3"/>
+  <joint name="r_hand_middle_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003299999999999942 -0.004081940988398425 -0.03776668459795801" rpy="-3.141592653589792 1.5049109712528799 1.5707963267948986"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_3"/>
+  </joint>
+  <link name="r_hand_middle_skin_4"/>
+  <joint name="r_hand_middle_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276321 -0.001192320688661208 -0.03799999999999998" rpy="-3.141592653589792 1.2994442229713614 2.7771555423255876"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_4"/>
+  </joint>
+  <link name="r_hand_middle_skin_5"/>
+  <joint name="r_hand_middle_skin_5_fixed_joint" type="fixed">
+    <origin xyz="-2.42861286636753e-17 -0.0034840921633511046 -0.03982136611863335" rpy="-3.141592653589793 1.08875132979836 1.5707963267948968"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_5"/>
+  </joint>
+  <link name="r_hand_middle_skin_6"/>
+  <joint name="r_hand_middle_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999766 -0.0018288017188733963 -0.041769634404151934" rpy="-3.1415926535897927 0.778815589313783 2.532067756581199"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_6"/>
+  </joint>
+  <link name="r_hand_middle_skin_7"/>
+  <joint name="r_hand_middle_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-5.204170427930421e-17 -2.9018466437888413e-4 -0.04325964091188089" rpy="-3.141592653589793 0.6209480183022739 1.5712124826321157"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_7"/>
+  </joint>
+  <link name="r_hand_middle_skin_8"/>
+  <joint name="r_hand_middle_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000217 -0.0018288017188733408 -0.04176963440415199" rpy="3.1415926535897927 0.778815589313783 0.6095248970085936"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_8"/>
+  </joint>
+  <link name="r_hand_middle_skin_9"/>
+  <joint name="r_hand_middle_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.00592952594227638 -0.0011923206886611526 -0.03799999999999998" rpy="3.141592653589792 1.299444222971361 0.3644371112642049"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_9"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_0"/>
+  <joint name="r_hand_pinkie_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0024339180582408637 -0.03140545777888881" rpy="2.6430654561173425e-16 1.2225055986691284 -1.5707963267948966"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_0"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_1"/>
+  <joint name="r_hand_pinkie_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000113 -0.0031311476143962846 -0.03328041800528675" rpy="1.8177511696515236e-16 1.2200949024613699 -1.5707963267948966"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_10"/>
+  <joint name="r_hand_pinkie_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999974 -0.004081940988402782 -0.037766684597957845" rpy="3.1415926535897922 1.5049109712528714 1.5707963267948974"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_10"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_11"/>
+  <joint name="r_hand_pinkie_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999904 -0.0031311476143963124 -0.033280418005286805" rpy="1.8177511696515236e-16 1.2200949024613699 -1.5707963267948966"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_11"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_2"/>
+  <joint name="r_hand_pinkie_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.003758241653584321 -0.03519204940845877" rpy="3.17787377316464e-16 1.3056813328515169 -1.5707963267948966"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_2"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_3"/>
+  <joint name="r_hand_pinkie_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003300000000000018 -0.004081940988402699 -0.0377666845979579" rpy="3.1415926535897922 1.5049109712528714 1.5707963267948977"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_3"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_4"/>
+  <joint name="r_hand_pinkie_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276366 -0.0011923206886655102 -0.03799999999999981" rpy="3.1415926535897625 1.2994442229713585 2.777155542325558"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_4"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_5"/>
+  <joint name="r_hand_pinkie_skin_5_fixed_joint" type="fixed">
+    <origin xyz="1.3877787807814457e-17 -0.00348409216335549 -0.03982136611863324" rpy="3.141592653589793 1.0887513297983513 1.5707963267948968"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_5"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_6"/>
+  <joint name="r_hand_pinkie_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0033000000000000043 -0.0018288017188776429 -0.04176963440415177" rpy="3.1415926535897833 0.778815589313778 2.532067756581192"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_6"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_7"/>
+  <joint name="r_hand_pinkie_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-6.938893903907228e-18 -2.901846643830752e-4 -0.04325964091188084" rpy="3.141592653589793 0.620948018302265 1.5712124826321159"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_7"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_8"/>
+  <joint name="r_hand_pinkie_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999904 -0.0018288017188776429 -0.04176963440415177" rpy="-3.1415926535897833 0.7788155893137778 0.6095248970086008"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_8"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_9"/>
+  <joint name="r_hand_pinkie_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525942276352 -0.0011923206886654825 -0.03799999999999981" rpy="-3.141592653589763 1.299444222971359 0.3644371112642355"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_9"/>
+  </joint>
+  <link name="r_hand_ring_skin_0"/>
+  <joint name="r_hand_ring_skin_0_fixed_joint" type="fixed">
+    <origin xyz="3.469446951953614e-18 -0.0024339182743748355 -0.03140545776213821" rpy="1.4231890647798227e-16 1.222505591786931 -1.5707963267948966"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_0"/>
+  </joint>
+  <link name="r_hand_ring_skin_1"/>
+  <joint name="r_hand_ring_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.0031311478434340456 -0.03328041798373782" rpy="1.4138064386867392e-16 1.2200948955791715 -1.5707963267948966"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_1"/>
+  </joint>
+  <link name="r_hand_ring_skin_10"/>
+  <joint name="r_hand_ring_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000113 -0.004081941248315957 -0.03776668456986537" rpy="3.1415926535897927 1.5049109781350702 1.5707963267948977"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_10"/>
+  </joint>
+  <link name="r_hand_ring_skin_11"/>
+  <joint name="r_hand_ring_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0033000000000000026 -0.0031311478434340456 -0.033280417983737876" rpy="1.4138064386867392e-16 1.2200948955791715 -1.5707963267948966"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_11"/>
+  </joint>
+  <link name="r_hand_ring_skin_2"/>
+  <joint name="r_hand_ring_skin_2_fixed_joint" type="fixed">
+    <origin xyz="1.214306433183765e-17 -0.0037582418957782804 -0.035192049382594015" rpy="1.324114038587985e-16 1.305681325969319 -1.5707963267948966"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_2"/>
+  </joint>
+  <link name="r_hand_ring_skin_3"/>
+  <joint name="r_hand_ring_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003299999999999987 -0.004081941248315901 -0.03776668456986537" rpy="3.1415926535897927 1.5049109781350702 1.5707963267948974"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_3"/>
+  </joint>
+  <link name="r_hand_ring_skin_4"/>
+  <joint name="r_hand_ring_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276352 -0.0011923209501843446 -0.03799999999179421" rpy="-3.1415926295995895 1.2994442254243346 2.777155565437974"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_4"/>
+  </joint>
+  <link name="r_hand_ring_skin_5"/>
+  <joint name="r_hand_ring_skin_5_fixed_joint" type="fixed">
+    <origin xyz="-1.214306433183765e-17 -0.0034840924374092974 -0.03982136609465514" rpy="3.141592653589793 1.0887513366805477 1.570796326794897"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_5"/>
+  </joint>
+  <link name="r_hand_ring_skin_6"/>
+  <joint name="r_hand_ring_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.0018288020063398913 -0.04176963439156578" rpy="-3.141592645661621 0.7788155932536848 2.53206776215024"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_6"/>
+  </joint>
+  <link name="r_hand_ring_skin_7"/>
+  <joint name="r_hand_ring_skin_7_fixed_joint" type="fixed">
+    <origin xyz="3.469446951953614e-18 -2.901849620998431e-4 -0.04325964090988388" rpy="-3.141592653586272 0.6209480251844615 1.5712124826341647"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_7"/>
+  </joint>
+  <link name="r_hand_ring_skin_8"/>
+  <joint name="r_hand_ring_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999956 -0.0018288020063398913 -0.04176963439156589" rpy="3.141592645661621 0.7788155932536843 0.6095248914395535"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_8"/>
+  </joint>
+  <link name="r_hand_ring_skin_9"/>
+  <joint name="r_hand_ring_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.0059295259422763695 -0.0011923209501843723 -0.03799999999179421" rpy="3.141592629599589 1.2994442254243332 0.36443708815181947"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_9"/>
+  </joint>
+  <link name="r_hand_thumb_skin_0"/>
+  <joint name="r_hand_thumb_skin_0_fixed_joint" type="fixed">
+    <origin xyz="-5.551115123125783e-17 -0.002433587294553591 -0.026405457778889127" rpy="2.765053092553465e-15 -1.22250559866914 1.5707963267948857"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_0"/>
+  </joint>
+  <link name="r_hand_thumb_skin_1"/>
+  <joint name="r_hand_thumb_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999696 -0.0031308168507089285 -0.02828041800528714" rpy="3.1415926535897922 -0.6108652381980179 -1.5707963267949114"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_10"/>
+  <joint name="r_hand_thumb_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000000000053 -0.004081610224715565 -0.032766684597958284" rpy="3.141592653589779 -1.5049109712529725 -1.570796326794926"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_10"/>
+  </joint>
+  <link name="r_hand_thumb_skin_11"/>
+  <joint name="r_hand_thumb_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003300000000000053 -0.0031308168507090395 -0.02828041800528719" rpy="2.908401871442372e-15 -1.2200949024613812 1.5707963267948855"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_11"/>
+  </joint>
+  <link name="r_hand_thumb_skin_2"/>
+  <joint name="r_hand_thumb_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0037579108898970204 -0.03019204940845916" rpy="3.389732024708853e-15 -1.3056813328515338 1.5707963267948863"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_2"/>
+  </joint>
+  <link name="r_hand_thumb_skin_3"/>
+  <joint name="r_hand_thumb_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.004081610224715454 -0.032766684597958305" rpy="3.1415926535897922 -0.6108652381980177 -1.5707963267949112"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_3"/>
+  </joint>
+  <link name="r_hand_thumb_skin_4"/>
+  <joint name="r_hand_thumb_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929525942276387 -0.0011919899249781263 -0.03300000000000026" rpy="1.5707963267948817 -1.507507552842365 -1.5707963267949265"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_4"/>
+  </joint>
+  <link name="r_hand_thumb_skin_5"/>
+  <joint name="r_hand_thumb_skin_5_fixed_joint" type="fixed">
+    <origin xyz="-5.551115123125783e-17 -0.003483761399668245 -0.034821366118633644" rpy="3.1415926535897913 -1.088751329798369 -1.5707963267949128"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_5"/>
+  </joint>
+  <link name="r_hand_thumb_skin_6"/>
+  <joint name="r_hand_thumb_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999999999999974 -0.0018284709551903977 -0.036769634404152235" rpy="-1.3861080081060772e-15 -0.7657426207446857 -1.5707963267949117"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_6"/>
+  </joint>
+  <link name="r_hand_thumb_skin_7"/>
+  <joint name="r_hand_thumb_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-2.7755575615628914e-17 -2.898539006959133e-4 -0.038259640911881256" rpy="-3.1415628661866624 -0.6209480176820894 -1.570431369087355"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_7"/>
+  </joint>
+  <link name="r_hand_thumb_skin_8"/>
+  <joint name="r_hand_thumb_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999999999999974 -0.0018284709551905087 -0.03676963440415227" rpy="3.071469774250236 -0.7763161153414891 -2.432155392931655"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_8"/>
+  </joint>
+  <link name="r_hand_thumb_skin_9"/>
+  <joint name="r_hand_thumb_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929525942276387 -0.0011919899249783206 -0.03300000000000024" rpy="2.9258803249384773 -1.2928372753400146 -2.553113197096302"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_9"/>
+  </joint>
+  <link name="torso_tripod_root"/>
+  <joint name="torso_tripod_root_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="torso_platform_link"/>
+    <child link="torso_tripod_root"/>
+  </joint>
+  <gazebo reference="l_arm_ft_sensor">
+    <sensor name="l_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>-2.15106e-16 0 0 3.14159 -2.54805e-16 -1.5708 </pose>
+    </sensor>
+  </gazebo>
+  <sensor name="l_arm_ft" type="force_torque">
+    <parent joint="l_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="3.14159 -2.54805e-16 -1.5708 " xyz="-2.15106e-16 0 0"/>
+  </sensor>
+  <gazebo reference="r_arm_ft_sensor">
+    <sensor name="r_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>0 0 0 -3.14159 -2.20185e-17 1.5708 </pose>
+    </sensor>
+  </gazebo>
+  <sensor name="r_arm_ft" type="force_torque">
+    <parent joint="r_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
+  </sensor>
+  <gazebo reference="head_link">
+    <sensor name="stereo_left_depth" type="rgbd_camera">
+      <always_on>1</always_on>
+      <update_rate>30.000000</update_rate>
+      <pose>0.0513268 0.0444871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <camera name="stereo_left_depth">
+        <pose frame="">-0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
+        <horizontal_fov>1.02259</horizontal_fov>
+        <distortion>
+          <k1>0</k1>
+          <k2>0</k2>
+          <k3>0</k3>
+          <p1>0</p1>
+          <p2>0</p2>
+          <center>319.5 239.5</center>
+        </distortion>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>3000</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+  <sensor name="stereo_left_depth" type="rgbd_camera">
+    <parent link="head_link"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0444871 0.0537548"/>
+  </sensor>
+  <gazebo reference="head_link">
+    <sensor name="stereo_right_depth" type="rgbd_camera">
+      <always_on>1</always_on>
+      <update_rate>30.000000</update_rate>
+      <pose>0.0513268 0.0184871 0.0537548 3.6174e-06 3.40159e-06 6.37858e-07 </pose>
+      <camera name="stereo_right_depth">
+        <pose frame="">0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
+        <horizontal_fov>1.02259</horizontal_fov>
+        <distortion>
+          <k1>0</k1>
+          <k2>0</k2>
+          <k3>0</k3>
+          <p1>0</p1>
+          <p2>0</p2>
+          <center>319.5 239.5</center>
+        </distortion>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>3000</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+  <sensor name="stereo_right_depth" type="rgbd_camera">
+    <parent link="head_link"/>
+    <origin rpy="3.6174e-06 3.40159e-06 6.37858e-07 " xyz="0.0513268 0.0184871 0.0537548"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser_front" type="gpu_lidar">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>0.07 0 0.031 0 -0 0 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1600</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.28</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser_front" type="gpu_lidar">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser_back" type="gpu_lidar">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>-0.085 0 0.031 0 -0 3.14159 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1600</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.28</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser_back" type="gpu_lidar">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
+  </sensor>
+  <gazebo>
+    <plugin name="gzyarp::StereoDepthCamera" filename="gz-sim-yarp-stereodepthcamera-system">
+      <yarpConfigurationString>(leftYarpDeviceName depthcamera_plugin_left_device) (rightYarpDeviceName depthcamera_plugin_right_device) (parentLinkName head_link) (leftSensorName stereo_left_depth) (rightSensorName stereo_right_depth) (stereoRgbPortName /r1mk3Sim/depthCamera/stereo/rgbImage:o) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    </plugin>
+  </gazebo>
+  <gazebo reference="r_arm_ft_sensor">
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <!-- For compatibility with SDFormat < 4.4 -->
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  <gazebo reference="l_arm_ft_sensor">
+    <preserveFixedJoint>true</preserveFixedJoint>
+    <!-- For compatibility with SDFormat < 4.4 -->
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo reference="l_shoulder_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_elbow">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo reference="r_shoulder_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_elbow">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+      <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
+    </plugin>
+  </gazebo>
+  <gazebo reference="mobile_base_body_link">
+    <collision>
+      <surface>
+        <contact>
+          <ode/>
+        </contact>
+        <friction>
+          <ode>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo>
+    <pose>0 0 0.16 0 0 0</pose>
+  </gazebo>
+  <gazebo reference="mobile_base_l_wheel_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="mobile_base_r_wheel_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="neck_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="neck_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_roll_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_elbow_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pronosupination_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_paddle_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_paddle_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_thumb_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_thumb_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_roll_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_elbow_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pronosupination_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_paddle_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_paddle_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_thumb_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_thumb_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
+  </gazebo>
+</robot>
